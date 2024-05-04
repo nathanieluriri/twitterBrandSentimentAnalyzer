@@ -1,10 +1,10 @@
 import streamlit as st
 from openai import OpenAI
 from dotenv import load_dotenv
-
+import os
 load_dotenv()
-
-client = OpenAI()
+API_KEY=os.getenv("openai_api_key")
+client = OpenAI(api_key=API_KEY)
 
 
 if "modelName" not in st.session_state:
